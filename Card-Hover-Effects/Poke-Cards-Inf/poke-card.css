@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+:root {
+  --first-color: hsl(82, 60%, 28%);
+  --title-color: hsl(0, 0%, 15%);
+  --text-color: hsl(0, 0%, 35%);
+  --body-color: hsl(0, 0%, 95%);
+  --container-color: hsl(0, 0%, 100%);
+  --body-font: "Poppins", sans-serif;
+  --h2-font-size: 1.25rem;
+  --small-font-size: .813rem;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-block: 5rem;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10rem;
+}
+
+.card-article {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.card-img {
+  width: 300px;
+  height: auto;
+  border-radius: 1.5rem; 
+  border: 4px solid transparent; 
+}
+
+.card-data {
+  width: 250px;
+  height: 95%;
+  background-color: var(--container-color);
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  position: absolute;
+  align-self: center;
+  justify-content: center;
+  left: -10rem;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin-inline: auto;
+  opacity: 0;
+  transition: opacity 1s 0.5s;
+}
+
+.card-description {
+  display: block;
+  font-size: var(--small-font-size);
+  margin-bottom: .25rem;
+}
+
+.card-title {
+  font-size: var(--h2-font-size);
+  font-weight: 500;
+  color: var(--title-color);
+  margin-bottom: .75rem;
+}
+
+.card-button {
+  text-decoration: none;
+  font-size: var(--small-font-size);
+  font-weight: 500;
+  color: var(--first-color);
+}
+
+.card-button:hover {
+  text-decoration: underline;
+}
+
+.card-title.yellow {
+  color: rgb(223, 208, 3);
+  text-decoration: underline;
+}
+
+.card-title.orange {
+  color: orange;
+  text-decoration: underline;
+}
+
+.card-title.blue {
+  color: lightblue;
+  text-decoration: underline;
+}
+
+.card-article:hover .card-data {
+  animation: show-data-left 1s forwards, move-card-left 1.5s forwards;
+  opacity: 0.9;
+  transition: opacity .3s;
+}
+
+.card-article:hover {
+  animation: remove-overflow 1s forwards, move-article-right 1.5s forwards ;
+}
+
+.card-article:not(:hover) {
+  animation: show-overflow 1s forwards;
+}
+
+.card-article:not(:hover) .card-data {
+  animation: remove-data 1s forwards;
+}
+
+
+@keyframes show-data-left {
+  50% {
+    transform: translateX(10rem);
+  }
+  100% {
+    transform: translateX(0);
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, 15);
+  }
+}
+
+@keyframes move-article-right {
+  0% {
+    border-radius: 1.5rem;
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(15deg);
+    transform: skewX(-5deg);
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, 15);
+    border-radius: 1.5rem;
+  }
+}
+
+@keyframes move-card-left {
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-20deg);
+    transform: skewX(7deg);
+  }
+}
+
+@keyframes remove-overflow {
+  to {
+    overflow: initial;
+  }
+}
+
+@keyframes remove-data {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4.5rem);
+  }
+  100% {
+    transform: translateX(-0.5rem);
+  }
+}
+
+@keyframes show-overflow {
+  0% {
+    overflow: initial;
+  }
+  100% {
+    overflow: hidden;
+  }
+}
