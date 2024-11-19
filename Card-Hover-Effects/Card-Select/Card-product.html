@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Hover Effect</title>
+    <link rel="stylesheet" type="text/css" href="card-product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="card">
+        <div class="imgBx">
+            <img class="img" src="images/Camisa.png" id="image">
+            <span class="arrow left" onclick="changeImage('left')">
+                <i class="fas fa-angle-left"></i> 
+            </span>
+            <span class="arrow right" onclick="changeImage('right')">
+                <i class="fas fa-angle-right"></i>
+            </span>
+
+            <!-- Círculos debajo de la imagen -->
+            <div class="indicators">
+                <div class="indicator" id="indicator-1"></div>
+                <div class="indicator" id="indicator-2"></div>
+                <div class="indicator" id="indicator-3"></div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="details">
+                <h2>Camisa <span>Sin Diseño</span></h2>
+                <div class="product-description">
+                    <p>Una camisa elegante y cómoda para cualquier ocasión.</p>
+                    <p class="price">$25.99</p>
+                </div>
+                <div class="actionBtn">
+                    <button class="add-to-cart">Añadir al carrito</button>
+                    <button class="view-details">Ver detalles</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="card-product.js"></script>
+</body>
+</html>
