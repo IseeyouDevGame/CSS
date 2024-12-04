@@ -19,8 +19,8 @@ body {
     height: 500px;
     border-radius: 15px;
     border: 1px solid black;
-    box-shadow: 0 1px 25px rgba(0, 0, 0, 0.5); /* Sombra suave, sin afectar el contenedor */
-    overflow: hidden; /* Se sigue ocultando el contenido fuera de los límites */
+    box-shadow: 0 1px 25px rgba(0, 0, 0, 0.5);
+    overflow: hidden; 
 }
 
 .login-box {
@@ -73,17 +73,28 @@ body {
 
 button {
     width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
+    padding: 12px;
+    background: linear-gradient(45deg, #6a11cb, #2575fc); /* Gradiente moderno */
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px; /* Bordes redondeados más marcados */
     cursor: pointer;
     font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: all 0.3s ease; /* Transición suave */
 }
 
 button:hover {
-    background-color: #45a049;
+    background: linear-gradient(45deg, #2575fc, #6a11cb); /* Intercambio de colores en hover */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+    transform: translateY(-3px); /* Efecto de elevación */
+}
+
+button:active {
+    transform: translateY(0); /* Sin elevación al hacer clic */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra más suave */
 }
 
 .login-box2 {
@@ -102,7 +113,10 @@ button:hover {
     margin-bottom: 20px;
     color: black;
 }
+.login-box2 .input-g{
 
+    transform: translateY(40px);
+}
 .login-box2:hover {
     top: 25%;
 }
